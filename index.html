@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto|Titillium+Web" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type=text/css>
   </head>
   <body>
-    <script>
-
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
-
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
-
-      });
-
-    </script>
+    <main>
+      <div id="tweetsContainer"></div>
+    </main>
+    <div id="imageContainer">
+      <img src="blue-sky.jpg">
+    </div>
+    
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Modal Header</h2>
+        </div>
+        <hr />
+        <div class="modal-body">
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+    
+    <script src="jquery.js"></script>
+    <script src="moment.js"></script>
+    <script src="personal.js"></script>
   </body>
 </html>
